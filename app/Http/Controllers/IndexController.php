@@ -9,6 +9,6 @@ class IndexController extends Controller
 {
     public function index(){
         $video = Video::all();
-        return view('index');
+        return view('index',['videos'=>$video]);
     }
 }

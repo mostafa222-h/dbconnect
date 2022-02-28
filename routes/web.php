@@ -24,5 +24,5 @@ Route::get('/factory', function () {
    return Video::factory()->create();
 });*/
 
-Route::get('/',[IndexController::class,'index']);
+Route::get('/index',[IndexController::class,'index']);
 
