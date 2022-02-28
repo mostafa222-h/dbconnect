@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::table('videos', function (Blueprint $table) {
             $table->string('slug',120)->unique()->after('director');
-        });App\Models\Video::factory()->create();
+        });
     }
 
     /**

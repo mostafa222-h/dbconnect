@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('url');
-            $table->integer('lenght');
+            $table->integer('length');
             $table->timestamps();
         });
     }

@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('videos', function (Blueprint $table) {
-            $table->text('description')->after('lenght')->nullable();
+            $table->text('description')->after('length')->nullable();
         });
     }
 
