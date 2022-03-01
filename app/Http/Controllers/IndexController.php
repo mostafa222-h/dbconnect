@@ -8,14 +8,16 @@ use Illuminate\Http\Request;
 class IndexController extends Controller
 {
     public function index(){
-        //$video = Video::all();
-        $latest=Video::lastest()->take(6)->get();
-        $mostPopular = Video::all()->random(6)->get();
-        $mostView = Video::all();
-        return view('index',[
-            'latest'=>$latest ,
-            'mostPopular' => $mostPopular ,
-            ' mostView' => $mostView
-            ]);
+
+        $videos=Video::latest()->take(6)->get();
+        $mostPopularVideos = Video::all()->random(6);
+        $mostViewedVideos = Video::all();
+        return view('index',compact('videos','mostPopularVideos','mostViewedVideos'));
+
+        /*return view('index',[
+            'videos'=>$videos ,
+            'mostPopularVideos' => $mostPopularVideos ,
+            'mostViewedVideos' => $mostViewedVideos
+        ]);*/
     }
 }
