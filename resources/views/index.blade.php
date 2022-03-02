@@ -7,6 +7,9 @@
         {{$video->name}}
        <a> <img src="{{$video->thumbnail}}">  </a>
 
+        {{$video->length}}.<b>زمان دقیق ویدیو</b>
+
+
 
 
 
