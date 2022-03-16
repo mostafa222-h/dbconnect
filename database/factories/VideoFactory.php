@@ -29,7 +29,7 @@ class VideoFactory extends Factory
             'url' => "https://file-examples-con.github.io/uploads/2017/04/file_example_mp4_1920_18MG.mp4",
             'length' => $this->faker->randomNumber(8, false),
             'slug' => $this->faker->slug() ,
-            'description' => $this->faker->realText(),
+            'description' => $this->faker->text(),
             'thumbnail' => 'https://loremflickr.com/446/240/world?random=' . rand(1,99)
         ];
     }

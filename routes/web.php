@@ -25,4 +25,6 @@ Route::get('/factory', function () {
 });*/
 
 Route::get('/index',[IndexController::class,'index']);
+Route::get('/videos/create',[VideoController::class,'create']);
+Route::post('/videos',[VideoController::class,'store']);
 
