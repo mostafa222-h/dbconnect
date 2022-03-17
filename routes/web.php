@@ -24,7 +24,7 @@ Route::get('/factory', function () {
    return Video::factory()->create();
 });*/
 
-Route::get('/index',[IndexController::class,'index']);
-Route::get('/videos/create',[VideoController::class,'create']);
-Route::post('/videos',[VideoController::class,'store']);
+Route::get('/index',[IndexController::class,'index'])->name('index');
+Route::get('/videos/create',[VideoController::class,'create'])->name('videos.create');
+Route::post('/videos',[VideoController::class,'store'])->name('videos.store');
 

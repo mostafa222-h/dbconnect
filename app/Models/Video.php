@@ -10,9 +10,9 @@ class Video extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'director' , 'url' , 'thumbnail' ,'slug' ,'length'
+        'name', 'description' , 'director' , 'url' , 'thumbnail' ,'slug' ,'length'
     ];
-  protected $guarded = ['description'];
+  protected $guarded = [];
 
 
     public function getlengthAttribute($value){
