@@ -1,21 +1,29 @@
 @extends('layouts.app')
 @section('content')
-
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
                 <h1 class="page-title"><span>آپلود</span> ویدیو</h1>
                 <form action="/videos" method="post">
                     @csrf
                     <div class="row">
                         <div>
-                            <label>عنوان</label>
-                            <input name="name" type="text"  placeholder="عنوان">
+                            <label>@lang('videos.name')</label>
+                            <input name="name" type="text"  placeholder="@lang('videos.name')">
                         </div>
                         <div>
                             <label>سازنده</label>
                             <input name="director" type="text"  placeholder="سازنده">
                         </div>
                         <div>
-                            <label>مدت زمان</label>
-                            <input name="length" type="text"  placeholder="مدت زمان">
+                            <label>@lang('videos.length')</label>
+                            <input name="length" type="text"  placeholder="@lang('videos.length')">
                         </div>
                         <div class="col-md-6">
                             <label>نام یکتا</label>
