@@ -15,7 +15,16 @@ class Video extends Model
   protected $guarded = [];
 
 
-    public function getlengthAttribute($value){
-        return gmdate("H:i:s",$value);
+    public function getlengthInHumanAttribute(){
+        return gmdate("H:i:s",$this->value);
+    }
+    public function relatedVideos(int $count=6){
+
+        return Video::all()->random($count);
+
+}
+    public function getRouteKeyName()
+    {
+        return 'slug' ;
     }
 }

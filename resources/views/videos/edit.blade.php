@@ -10,36 +10,36 @@
         </div>
     @endif
                 <h1 class="page-title"><span>آپلود</span> ویدیو</h1>
-                <form action="/videos" method="post">
+                <form action="{{route('videos.update',$video->slug)}}" method="post">
                     @csrf
                     <div class="row">
                         <div>
                             <label>@lang('videos.name')</label>
-                            <input name="name" value="{{old('name')}}" type="text"  placeholder="@lang('videos.name')">
+                            <input name="name" value="{{$video->name}}" type="text"  placeholder="@lang('videos.name')">
                         </div>
                         <div>
                             <label>سازنده</label>
-                            <input name="director" value="{{old('director')}}" type="text"  placeholder="سازنده">
+                            <input name="director" value="{{$video->director}}" type="text"  placeholder="سازنده">
                         </div>
                         <div>
                             <label>@lang('videos.length')</label>
-                            <input name="length" value="{{old('length')}}" type="text"  placeholder="@lang('videos.length')">
+                            <input name="length" value="{{$video->length}}" type="text"  placeholder="@lang('videos.length')">
                         </div>
                         <div class="col-md-6">
                             <label>نام یکتا</label>
-                            <input name="slug" value="{{old('slug')}}" type="text"  placeholder="نام یکتا">
+                            <input name="slug" value="{{$video->slug}}" type="text"  placeholder="نام یکتا">
                         </div>
                         <div >
                             <label>آدرس ویدیو</label>
-                            <input  name="url" value="{{old('url')}}" type="text"  placeholder="آدرس ویدیو">
+                            <input  name="url" value="{{$video->url}}" type="text"  placeholder="آدرس ویدیو">
                         </div>
                         <div >
                             <label>تصویر بند‌انگشتی</label>
-                            <input  name="thumbnail" value="{{old('thumbnail')}}" type="text"  placeholder="تصویر بند انگشتی">
+                            <input  name="thumbnail" value="{{$video->thumbnail}}" type="text"  placeholder="تصویر بند انگشتی">
                         </div>
                         <div>
                             <label>توضیحات</label>
-                            <textarea name="description" value="{{old('description')}}"  rows="4" placeholder="توضیح"></textarea>
+                            <textarea name="description" value="{{$video->description}}"  rows="4" placeholder="توضیح"></textarea>
                         </div>
                         <div>
                             <button type="submit"   style="background-color: aqua">ذخیره</button>

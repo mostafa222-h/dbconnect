@@ -4,10 +4,11 @@
     <div>
     @foreach($videos as $video)
 
-        {{$video->name}}
-       <a> <img src="{{$video->thumbnail}}">  </a>
+            <a href="{{ route('videos.show', $video->slug) }}">{{$video->name}}</a>
+        <a href="{{route('videos.edit',$video->slug)}}"><b style="color: rebeccapurple">edit</b>  </a>
+       <a href="{{ route('videos.show', $video->slug) }}"> <img src="{{$video->thumbnail}}">  </a>
 
-        {{$video->length}}.<b>زمان دقیق ویدیو</b> <hr><br>
+        {{$video->lengthInHuman}}.<b>زمان دقیق ویدیو</b> <hr><br>
         <b>تاریخ ساخت :::::</b>
         {{$video->created_at}}
 
@@ -21,8 +22,9 @@
     <div>
         @foreach($mostPopularVideos as $mostPopularVideo)
 
-            {{$mostPopularVideo->name}}
-            <a> <img src="{{$mostPopularVideo->thumbnail}}">  </a>
+            <a href="{{ route('videos.show', $video->slug) }}"> {{$mostPopularVideo->name}} </a>
+            <a href="{{route('videos.edit',$video->slug)}}"><b style="color: rebeccapurple">edit</b>  </a>
+            <a href="{{ route('videos.show', $video->slug) }}"> <img src="{{$mostPopularVideo->thumbnail}}">  </a>
 
 
 
@@ -33,8 +35,9 @@
     <div>
         @foreach($mostViewedVideos as $mostViewedVideo)
 
-            {{$mostViewedVideo->name}}
-            <a> <img src="{{$mostViewedVideo->thumbnail}}">  </a>
+            <a href="{{ route('videos.show', $video->slug) }}"> {{$mostViewedVideo->name}} </a>
+            <a href="{{route('videos.edit',$video->slug)}}"><b style="color: rebeccapurple">edit</b>  </a>
+            <a href="{{ route('videos.show', $video->slug) }}"> <img src="{{$mostViewedVideo->thumbnail}}">  </a>
 
 
 
