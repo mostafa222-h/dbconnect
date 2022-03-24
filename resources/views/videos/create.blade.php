@@ -1,52 +1,60 @@
 @extends('layouts.app')
 @section('content')
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+    <div id="upload">
+        <div class="row">
+            <x-validation-errors></x-validation-errors>
+            <!-- upload -->
+            <div class="col-md-8">
                 <h1 class="page-title"><span>آپلود</span> ویدیو</h1>
-                <form action="/videos" method="post">
+                <form action="{{ route('videos.store') }}" method="POST">
                     @csrf
                     <div class="row">
-                        <div>
+                        <div class="col-md-6">
                             <label>@lang('videos.name')</label>
-                            <input name="name" value="{{old('name')}}" type="text"  placeholder="@lang('videos.name')">
+                            <input name="name" type="text" class="form-control" value="{{ old('name') }}"
+                                placeholder="@lang('videos.name')">
                         </div>
-                        <div>
-                            <label>سازنده</label>
-                            <input name="director" value="{{old('director')}}" type="text"  placeholder="سازنده">
+                        <div class="col-md-6">
+                            <label>@lang('videos.director')</label>
+                            <input name="director" type="text" class="form-control" value="{{ old('director') }}"
+                                   placeholder="@lang('videos.director')">
                         </div>
-                        <div>
+                        <div class="col-md-6">
                             <label>@lang('videos.length')</label>
-                            <input name="length" value="{{old('length')}}" type="text"  placeholder="@lang('videos.length')">
+                            <input type="text" name="length" class="form-control" value="{{ old('length') }}"
+                                placeholder="@lang('videos.length')">
                         </div>
                         <div class="col-md-6">
                             <label>نام یکتا</label>
-                            <input name="slug" value="{{old('slug')}}" type="text"  placeholder="نام یکتا">
+                            <input type="text" name="slug" class="form-control" value="{{ old('slug') }}"
+                                placeholder="نام یکتا">
                         </div>
-                        <div >
+                        <div class="col-md-6">
                             <label>آدرس ویدیو</label>
-                            <input  name="url" value="{{old('url')}}" type="text"  placeholder="آدرس ویدیو">
+                            <input type="text" name="url" class="form-control" value="{{ old('url') }}"
+                                placeholder="آدرس ویدیو">
                         </div>
-                        <div >
+                        <div class="col-md-6">
                             <label>تصویر بند‌انگشتی</label>
-                            <input  name="thumbnail" value="{{old('thumbnail')}}" type="text"  placeholder="تصویر بند انگشتی">
+                            <input type="text" name="thumbnail" class="form-control" value="{{ old('thumbnail') }}"
+                                placeholder="تصویر بند انگشتی">
                         </div>
-                        <div>
+                        <div class="col-md-12">
                             <label>توضیحات</label>
-                            <textarea name="description" value="{{old('description')}}"  rows="4" placeholder="توضیح"></textarea>
+                            <textarea class="form-control" name="description" rows="4"
+                                placeholder="توضیح">{{ old('description') }}</textarea>
                         </div>
-                        <div>
-                            <button type="submit"   style="background-color: aqua">ذخیره</button>
+                        <div class="col-md-2">
+                            <button type="submit" id="contact_submit" class="btn btn-dm">ذخیره</button>
                         </div>
                     </div>
                 </form>
+            </div><!-- // col-md-8 -->
 
-
-
+            <div class="col-md-4">
+                <a href="#"><img src="{{ asset('img/upload-adv.png') }}" alt=""></a>
+            </div><!-- // col-md-8 -->
+            <!-- // upload -->
+        </div><!-- // row -->
+    </div>
 @endsection

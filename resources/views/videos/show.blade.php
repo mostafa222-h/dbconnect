@@ -1,14 +1,13 @@
 @extends('layouts.app')
 @section('content')
-
-    <div >
+    <div class="row">
         <!-- Watch -->
-        <div >
-            <div >
+        <div class="col-md-8">
+            <div id="watch">
 
                 <!-- Video Player -->
-                <h1>{{ $video->name }}</h1>
-                <div >
+                <h1 class="video-title">{{ $video->name }}</h1>
+                <div class="video-code">
                     <video controls style="height: 100%; width: 100%;">
                         <source src="{{ $video->url }}" type="video/mp4">
                     </video>
@@ -20,52 +19,52 @@
                     </p>
                 </div>
 
-                <div >
-                    <ul >
-                        <li><a  href="#">1250 <i ></i></a></li>
-                        <li><a  href="#">1250 <i ></i></a></li>
+                <div class="video-share">
+                    <ul class="like">
+                        <li><a class="deslike" href="#">1250 <i class="fa fa-thumbs-down"></i></a></li>
+                        <li><a class="like" href="#">1250 <i class="fa fa-thumbs-up"></i></a></li>
                     </ul>
-                    <ul>
-                        <li><a  href="#"><i aria-hidden="true"></i></a>
+                    <ul class="social_link">
+                        <li><a class="facebook" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                         </li>
-                        <li><a  href="#"><i  aria-hidden="true"></i></a>
+                        <li><a class="youtube" href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
                         </li>
-                        <li><a  href="#"><i  aria-hidden="true"></i></a>
+                        <li><a class="linkedin" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                         </li>
-                        <li><a cl href="#"><i aria-hidden="true"></i></a>
+                        <li><a class="google" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
                         </li>
-                        <li><a  href="#"><i  aria-hidden="true"></i></a>
+                        <li><a class="twitter" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                         </li>
-                        <li><a  href="#"><i  aria-hidden="true"></i></a></li>
+                        <li><a class="rss" href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
                     </ul><!-- // Social -->
                 </div><!-- // video-share -->
                 <!-- // Video Player -->
 
 
                 <!-- Chanels Item -->
-                <div>
-                    <div>
+                <div class="chanel-item">
+                    <div class="chanel-thumb">
                         <a href="#"><img src="/demo_img/ch-1.jpg" alt=""></a>
                     </div>
-                    <div >
-                        <a  href="#">داود طاهری</a>
-                        <span >436,414 ویدیو</span>
+                    <div class="chanel-info">
+                        <a class="title" href="#">داود طاهری</a>
+                        <span class="subscribers">436,414 ویدیو</span>
                     </div>
-                    <a href="#" >مشاهده همه ویدیوهای داوود طاهری</a>
+                    <a href="#" class="subscribe">مشاهده همه ویدیوهای داوود طاهری</a>
                 </div>
                 <!-- // Chanels Item -->
 
 
                 <!-- Comments -->
-                <div>
-                    <h3><span>19</span> نظرات</h3>
-                    <ul>
+                <div id="comments" class="post-comments">
+                    <h3 class="post-box-title"><span>19</span> نظرات</h3>
+                    <ul class="comments-list">
                         <li>
-                            <div>
-                                <div>
+                            <div class="post_author">
+                                <div class="img_in">
                                     <a href="#"><img src="/demo_img/c1.jpg" alt=""></a>
                                 </div>
-                                <a href="#">داود طاهری</a>
+                                <a href="#" class="author-name">داود طاهری</a>
                                 <time datetime="2017-03-24T18:18">مرداد 27, 1397 - 11:00</time>
                             </div>
                             <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
@@ -79,7 +78,7 @@
                                 <div class="img_in">
                                     <a href="#"><img src="/demo_img/c2.jpg" alt=""></a>
                                 </div>
-                                <a href="#" >بهمن نجاتی</a>
+                                <a href="#" class="author-name">بهمن نجاتی</a>
                                 <time datetime="2017-03-24T18:18">مرداد 27, 1397 - 11:00</time>
                             </div>
                             <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
@@ -90,13 +89,13 @@
                     </ul>
 
 
-                    <h3 >ارسال نظرات</h3>
+                    <h3 class="post-box-title">ارسال نظرات</h3>
                     <form>
-                        <input type="text"  id="Name" placeholder="نام">
-                        <input type="email"  id="Email" placeholder="ایمیل">
-                        <input type="text"  placeholder="سایت">
-                        <textarea  rows="8" id="Message" placeholder="پیام"></textarea>
-                        <button type="button"  >ارسال پیام</button>
+                        <input type="text" class="form-control" id="Name" placeholder="نام">
+                        <input type="email" class="form-control" id="Email" placeholder="ایمیل">
+                        <input type="text" class="form-control" placeholder="سایت">
+                        <textarea class="form-control" rows="8" id="Message" placeholder="پیام"></textarea>
+                        <button type="button" id="contact_submit" class="btn btn-dm">ارسال پیام</button>
                     </form>
                 </div>
                 <!-- // Comments -->
@@ -107,12 +106,10 @@
         <!-- // Watch -->
 
         <!-- Related Posts-->
-        <div>
-            <x-related-video :video="$video" />
+        <div class="col-md-4">
+            <x-related-videos :video="$video" />
         </div><!-- // col-md-4 -->
         <!-- // Related Posts -->
-
-
     </div>
 
 @endsection

@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
 use App\Models\Video;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -30,7 +31,8 @@ class VideoFactory extends Factory
             'length' => $this->faker->randomNumber(8, false),
             'slug' => $this->faker->slug() ,
             'description' => $this->faker->text(),
-            'thumbnail' => 'https://loremflickr.com/446/240/world?random=' . rand(1,99)
+            'thumbnail' => 'https://loremflickr.com/446/240/world?random=' . rand(1,99),
+            'category_id' => Category::first() ?? Category::factory()->create(),
         ];
     }
 }
