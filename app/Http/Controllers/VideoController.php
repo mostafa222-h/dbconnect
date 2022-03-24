@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreVideoRequest;
 use App\Http\Requests\UpdateVideoRequest;
+use App\Models\Category;
 use App\Models\Video;
 use Illuminate\Http\Request;
 use JetBrains\PhpStorm\NoReturn;
@@ -15,11 +16,12 @@ class VideoController extends Controller
           return  $video = Video::find(1);
      }
      public  function  create(){
-        return view('videos.create');
+         $categories = Category::all();
+        return view('videos.create',compact('categories'));
      }
 
      public function store(StoreVideoRequest $request){
-         //dd($request->all());
+
 
         /* $request->validate([
              'name'=> ['required'] ,

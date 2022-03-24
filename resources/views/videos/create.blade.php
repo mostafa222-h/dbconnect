@@ -39,6 +39,14 @@
                             <input type="text" name="thumbnail" class="form-control" value="{{ old('thumbnail') }}"
                                 placeholder="تصویر بند انگشتی">
                         </div>
+                        <div class="col-md-6">
+                            <label>دسته بندی ها</label>
+                           <select  name="category_id" id="category">
+                               @foreach($categories as $category)
+                               <option value="{{$category->id}}" name="{{$category->name}}">{{$category->name}}</option>
+                               @endforeach
+                           </select>
+                        </div>
                         <div class="col-md-12">
                             <label>توضیحات</label>
                             <textarea class="form-control" name="description" rows="4"
