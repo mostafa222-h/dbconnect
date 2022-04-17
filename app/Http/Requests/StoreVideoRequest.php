@@ -36,6 +36,7 @@ class StoreVideoRequest extends FormRequest
             'url' => ['required' , 'url'] ,
             'length' => ['required','integer'] ,
             'thumbnail' => ['required' , 'url'] ,
+            'category_id' => ['required' , 'exists:categories,id'],
         ];
 
     }

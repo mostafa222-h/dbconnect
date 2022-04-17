@@ -5,13 +5,16 @@ return[
     'integer' => ' :attribute باید یک عدد صحیح باشد ',
     'alpha_dash' => ':attribute فقط باید شامل حروف، اعداد، خط تیره و زیرخط باشد. ',
     'unique' => ':attribute قبلا گرفته شده.',
-    'attributes' => [
+    'exists' => ' :attribute انتخاب شده معتبر نیست.',
+
+        'attributes' => [
         'name'=> 'نام ویدیو',
         'director'=> 'سازنده',
         'length'=> 'مدت زمان',
         'slug'=> 'نام یکتا',
         'url' => 'ادرس ویدیو',
-        'thumbnail'=> 'تصویر بندانگشتی'
+        'thumbnail'=> 'تصویر بندانگشتی',
+        'category_id' => 'دسته بندی'
     ] ,
 
 ];
