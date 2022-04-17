@@ -41,7 +41,8 @@ class VideoController extends Controller
          return view('videos.show',compact('video'));
      }
      public function edit(Video $video){
-         return view('videos.edit',compact('video'));
+         $categories = Category::all();
+         return view('videos.edit',compact('video','categories'));
      }
      public function update(UpdateVideoRequest $request ,Video $video){
          $video->update($request->all());
