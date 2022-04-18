@@ -11,6 +11,9 @@ class Category extends Model
     public function videos(){
         return $this->hasMany(Video::class);
     }
+    public function getRandomVideos(int $count = 6){
+        return $this->videos()->inRandomOrder()->get()->take($count);
+    }
    /* public function getRouteKeyName()
     {
         return 'slug' ;

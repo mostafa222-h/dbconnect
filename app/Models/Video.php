@@ -20,7 +20,9 @@ class Video extends Model
     }
     public function relatedVideos(int $count=6){
 
-        return Video::all()->random($count);
+        return  $this->category->getRandomVideos($count);
+
+        //return Video::all()->random($count);
 
 }
     public function getRouteKeyName()
